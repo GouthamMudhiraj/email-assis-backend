@@ -3,9 +3,10 @@ package com.email.demo;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import tools.jackson.core.JacksonException;
-import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
+
 
 @Service
 public class EmailService {
@@ -69,7 +70,7 @@ public class EmailService {
                     .path("parts").get(0)
                     .path("text")
                     .asText();
-        } catch (JacksonException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

@@ -34,17 +34,26 @@
 
 	<dependencies>
 
+    <!-- REST Controllers -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
+    <!-- Needed for WebClient -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+
+    <!-- Lombok -->
     <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <optional>true</optional>
     </dependency>
 
+    <!-- Testing -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-test</artifactId>
@@ -52,6 +61,7 @@
     </dependency>
 
 </dependencies>
+
 
 <build>
     <plugins>
